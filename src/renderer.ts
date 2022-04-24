@@ -31,9 +31,7 @@ import './index.css';
 
 const btnGetValFromDjango = document.getElementById('btn_get_val_from_django');
 
-btnGetValFromDjango.onclick = async e => {
-
-
+btnGetValFromDjango.onclick = async () => {
 
 	const res = await axios.get("http://127.0.0.1:8000/edtwExampleAPI/get_val_from/", { params: {
 		input: ( document.getElementById('input_text') as HTMLInputElement ).value

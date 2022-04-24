@@ -31,12 +31,12 @@ const createWindow = (): void => {
 	);
 
 	mainWindow.webContents.session.webRequest.onHeadersReceived((details, callback) => {
-	const { responseHeaders } = details;
-	UpsertKeyValue(responseHeaders, 'Access-Control-Allow-Origin', ['*']);
-	UpsertKeyValue(responseHeaders, 'Access-Control-Allow-Headers', ['*']);
-	callback({
-		responseHeaders,
-	});
+		const { responseHeaders } = details;
+		UpsertKeyValue(responseHeaders, 'Access-Control-Allow-Origin', ['*']);
+		UpsertKeyValue(responseHeaders, 'Access-Control-Allow-Headers', ['*']);
+		callback({
+			responseHeaders,
+		});
 	});
 
 	// and load the index.html of the app.
